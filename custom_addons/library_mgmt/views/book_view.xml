@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+
+        <!-- Tree view -->
+        <record model="ir.ui.view" id="book_tree_view">
+            <field name="name">book_tree_view</field>
+            <field name="model">book</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Book Name"/>
+                    <field name="category" string="Category"/>
+                    <field name="isbn" string="ISBN"/>
+                    <field name="price" string="Price"/>
+                    <field name="pages" string="Pages"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form view -->
+        <record model="ir.ui.view" id="book_form_view">
+            <field name="name">book_form_view</field>
+            <field name="model">book</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>    
+                            <field name="name" string="Book Name"/>
+                            <field name="category" string="Category"/>
+                            <field name="isbn" string="ISBN"/>
+                            <field name="title"/>
+                            <field name="publisher"/>
+                            <field name="copyright"/>
+                            <field name="edition"/>
+                            <field name="author"/>
+                            <field name="price" string="Price"/>
+                            <field name="pages" string="Pages"/> 
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record> 
+        <!-- Action -->
+        <record model="ir.actions.act_window" id="library_mgmt_action_window">
+            <field name="name">library_mgmt window</field>
+            <field name="res_model">book</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Top menu item -->
+        <menuitem name="Library Management" id="library_management_root_menu"/>
+
+        <!-- menu category -->
+        <menuitem name="Book" id="book_root_menu" parent="library_management_root_menu"
+                  sequence="100" action="library_mgmt_action_window"/>
+
+    </data>
+</odoo>
