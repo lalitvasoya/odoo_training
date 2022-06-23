@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+
+        <!-- Tree view -->
+        <record model="ir.ui.view" id="book_tree_view">
+            <field name="name">book_tree_view</field>
+            <field name="model">book</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Book Name"/>
+                    <field name="isbn" string="ISBN"/>
+                    <field name="price" string="Price"/>
+                    <field name="pages" string="Pages"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form view -->
+        <record model="ir.ui.view" id="book_form_view">
+            <field name="name">book_form_view</field>
+            <field name="model">book</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>    
+                            <field name="name" string="Book Name"/>
+                            <field name="isbn" string="ISBN"/>
+                            <field name="title"/>
+                            <field name="publisher"/>
+                            <field name="copyright"/>
+                            <field name="edition"/>
+                            <field name="author_id" options="{'no_create': True}"/>
+                            <field name="price" string="Price"/>
+                            <field name="pages" string="Pages"/>
+                            <field name="category_ids" widget="many2many_tags" options="{'no_create': True, 'color_field': 'color'}">  
+                                <!-- <tree>
+                                    <field name="book_name"/>
+                                    <field name="color" widget="color_picker"/>
+                                </tree> -->
+                            </field>
+                            <field name="primary_category_ids" widget="many2many_tags"
+                                options="{'no_create': True, 'color_field': 'color'}" domain="[('id','in',category_ids)]">  
+                                    <!-- <tree>
+                                        <field name="book_name"/>
+                                        <field name="color" widget="color_picker"/>
+                                    </tree> -->
+                                </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record> 
+        <!-- Action -->
+        <record model="ir.actions.act_window" id="library_mgmt_action_window">
+            <field name="name">library_mgmt window</field>
+            <field name="res_model">book</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help">No data found</field>
+        </record>
+
+    </data>
+</odoo>

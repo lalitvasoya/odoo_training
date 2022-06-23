@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <!-- Book category tree view -->
+        <record model="ir.ui.view" id="book_category_tree_view">
+            <field name="name">book.tree.view</field>
+            <field name="model">book.category</field>
+            <field name="arch" type="xml">
+                <tree>
+                <!-- <tree editable="top"> -->
+                    <field name="book_name"/>
+                    <field name="color" widget="color_picker"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Book categort form view -->
+        <record model="ir.ui.view" id="book_category_form_view">
+            <field name="name">book.form.view</field>
+            <field name="model">book.category</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="book_name"/>
+                            <field name="color" widget="color_picker"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Book category tree view -->
+        <record model="ir.actions.act_window" id="book_category_action_window">
+            <field name="name">book.category.action</field>
+            <field name="res_model">book.category</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help">No data found!</field>
+        </record>
+    </data>
+</odoo>
