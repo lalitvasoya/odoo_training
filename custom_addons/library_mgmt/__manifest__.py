@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+
+
+
+
 {
     'name': "library_mgmt",
     'summary': """
@@ -16,7 +20,10 @@
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'views/book_view.xml'
+        'views/book_category_view.xml',
+        'views/book_view.xml',
+        'views/book_author_view.xml',
+        'views/library_menu_view.xml',
     ],
     'demo': [
         'demo/demo.xml',
