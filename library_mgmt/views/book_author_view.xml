@@ -24,8 +24,11 @@
                     <sheet>
                         <group>
                             <field name="name"/>
+<<<<<<< HEAD
                             <field name="about"/>
                             <field name="count"/>
+=======
+>>>>>>> 5a6453610c3fd6e5ac0bdda3a15310132754dfc5
                             <field name="book_ids">
                                 <tree>
                                     <field name="name"/>
